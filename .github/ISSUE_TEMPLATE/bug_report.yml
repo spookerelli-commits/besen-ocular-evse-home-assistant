@@ -1,0 +1,55 @@
+name: Bug report
+description: Report a reproducible integration problem
+title: "[Bug]: "
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: Do not post your six-character PIN, full Bluetooth address, Home Assistant analytics UUID, or unredacted raw captures.
+  - type: input
+    id: brand_model
+    attributes:
+      label: Charger brand and model
+      placeholder: Ocular LTE Plus / BESEN BS20
+    validations:
+      required: true
+  - type: input
+    id: firmware
+    attributes:
+      label: Charger firmware
+      placeholder: 405.3251.0Q03196
+    validations:
+      required: true
+  - type: dropdown
+    id: phases
+    attributes:
+      label: Electrical configuration
+      options: [Single-phase, Three-phase, Unknown]
+    validations:
+      required: true
+  - type: input
+    id: ha_version
+    attributes:
+      label: Home Assistant version
+    validations:
+      required: true
+  - type: dropdown
+    id: bluetooth_path
+    attributes:
+      label: Bluetooth path
+      options: [Local adapter, ESPHome Bluetooth proxy, Other]
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: What happened?
+      description: Include the expected result and exact steps to reproduce it.
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Sanitised debug log
+      description: Remove PINs, complete addresses, user IDs and unrelated Home Assistant data.
+      render: text

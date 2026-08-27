@@ -1,0 +1,83 @@
+{
+  "title": "BESEN / Ocular EVSE",
+  "config": {
+    "step": {
+      "user": {
+        "title": "Connect to BESEN / Ocular EVSE",
+        "description": "Enter the six-character PIN used by EVSEMaster. The PIN remains in Home Assistant.",
+        "data": {"address": "Bluetooth address", "pin": "EVSEMaster PIN", "user_id": "Charging record user ID"}
+      }
+    },
+    "error": {"ascii_only": "PIN and user ID must use ASCII characters only"},
+    "abort": {"already_configured": "This charger is already configured"}
+  },
+  "entity": {
+    "binary_sensor": {
+      "problem": {"name": "Problem"},
+      "bluetooth_connected": {"name": "Bluetooth connected"},
+      "plug_connected": {"name": "Vehicle plugged in"}
+    },
+    "button": {
+      "apply_schedule": {"name": "Apply daily schedule"},
+      "discard_schedule": {"name": "Discard schedule changes"},
+      "refresh_schedule": {"name": "Refresh schedule from charger"},
+      "start_once_off": {"name": "Start once-off charging"},
+      "synchronize_time": {"name": "Synchronize charger time"}
+    },
+    "number": {
+      "start_current": {"name": "Current limit"},
+      "once_delay_minutes": {"name": "Once-off start delay"},
+      "once_duration_minutes": {"name": "Once-off maximum duration"},
+      "once_energy_kwh": {"name": "Once-off energy limit"}
+    },
+    "event": {"charging_session": {"name": "Charging session history"}},
+    "switch": {
+      "charging": {"name": "Charging"},
+      "repeated_schedule": {"name": "Repeated schedule"},
+      "schedule_day_0": {"name": "Schedule Monday"},
+      "schedule_day_1": {"name": "Schedule Tuesday"},
+      "schedule_day_2": {"name": "Schedule Wednesday"},
+      "schedule_day_3": {"name": "Schedule Thursday"},
+      "schedule_day_4": {"name": "Schedule Friday"},
+      "schedule_day_5": {"name": "Schedule Saturday"},
+      "schedule_day_6": {"name": "Schedule Sunday"}
+    },
+    "time": {
+      "schedule_start": {"name": "All-days start"},
+      "schedule_stop": {"name": "All-days stop"},
+      "schedule_day_0_start": {"name": "Monday start"}, "schedule_day_0_stop": {"name": "Monday stop"},
+      "schedule_day_1_start": {"name": "Tuesday start"}, "schedule_day_1_stop": {"name": "Tuesday stop"},
+      "schedule_day_2_start": {"name": "Wednesday start"}, "schedule_day_2_stop": {"name": "Wednesday stop"},
+      "schedule_day_3_start": {"name": "Thursday start"}, "schedule_day_3_stop": {"name": "Thursday stop"},
+      "schedule_day_4_start": {"name": "Friday start"}, "schedule_day_4_stop": {"name": "Friday stop"},
+      "schedule_day_5_start": {"name": "Saturday start"}, "schedule_day_5_stop": {"name": "Saturday stop"},
+      "schedule_day_6_start": {"name": "Sunday start"}, "schedule_day_6_stop": {"name": "Sunday stop"}
+    },
+    "sensor": {
+      "status": {"name": "Status"}, "plug_state": {"name": "Plug state"},
+      "output_state": {"name": "Output state"}, "protocol_state": {"name": "Protocol state"},
+      "raw_plug_state": {"name": "Raw plug state"},
+      "raw_output_state": {"name": "Raw output state"},
+      "raw_protocol_state": {"name": "Raw protocol state"},
+      "power": {"name": "Power"}, "total_energy": {"name": "Total energy"},
+      "session_energy": {"name": "Session energy"}, "session_duration": {"name": "Session duration"},
+      "session_max_current": {"name": "Session maximum current"}, "voltage": {"name": "Voltage"},
+      "current": {"name": "Charge current"}, "temperature": {"name": "Charger temperature"},
+      "errors": {"name": "Errors"}, "last_command_result": {"name": "Last command result"},
+      "rssi": {"name": "Bluetooth signal"},
+      "last_packet_received": {"name": "Last packet received"},
+      "last_operational_packet_received": {"name": "Last operational packet received"},
+      "last_packet_type": {"name": "Last packet type"},
+      "last_unknown_packet": {"name": "Last unknown packet"},
+      "connection_uptime": {"name": "Connection uptime"},
+      "reconnect_count": {"name": "Reconnects today"},
+      "last_reconnect": {"name": "Last reconnect"},
+      "integration_health": {"name": "Integration health"},
+      "schedule_draft": {"name": "Schedule changes pending"},
+      "last_disconnect_reason": {"name": "Last disconnect reason"},
+      "last_connection_error": {"name": "Last connection error"},
+      "schedule_last_verified": {"name": "Schedule last verified"},
+      "last_charging_record": {"name": "Last charging session"}
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "domain": "ocular_evse",
+  "name": "BESEN / Ocular EVSE",
+  "bluetooth": [
+    {"service_uuid": "0000ffe4-0000-1000-8000-00805f9b34fb", "connectable": true},
+    {"service_uuid": "0000ffe9-0000-1000-8000-00805f9b34fb", "connectable": true}
+  ],
+  "codeowners": ["@GITHUB_USERNAME"],
+  "config_flow": true,
+  "dependencies": ["bluetooth_adapters"],
+  "documentation": "https://github.com/GITHUB_USERNAME/ocular-evse-home-assistant",
+  "integration_type": "device",
+  "iot_class": "local_push",
+  "issue_tracker": "https://github.com/GITHUB_USERNAME/ocular-evse-home-assistant/issues",
+  "requirements": [],
+  "version": "0.3.2"
+}

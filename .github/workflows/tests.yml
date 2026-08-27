@@ -1,0 +1,23 @@
+name: Tests
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - name: Validate JSON
+        run: python -m json.tool custom_components/ocular_evse/manifest.json >/dev/null && python -m json.tool custom_components/ocular_evse/strings.json >/dev/null && python -m json.tool custom_components/ocular_evse/translations/en.json >/dev/null && python -m json.tool hacs.json >/dev/null
+      - name: Compile Python
+        run: python -m compileall -q custom_components
+      - name: Run unit tests
+        run: python -m unittest discover -s tests -v

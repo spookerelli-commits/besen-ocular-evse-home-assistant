@@ -1,0 +1,53 @@
+name: Charger compatibility report
+description: Report results from another BESEN, Ocular or EVSEMaster-compatible charger
+title: "[Compatibility]: "
+labels: [compatibility]
+body:
+  - type: input
+    id: brand_model
+    attributes:
+      label: Retail brand and exact model
+    validations:
+      required: true
+  - type: input
+    id: manufacturer_model
+    attributes:
+      label: Manufacturer/OEM model, if shown
+      placeholder: BESEN BS20
+  - type: input
+    id: firmware
+    attributes:
+      label: Firmware version
+    validations:
+      required: true
+  - type: dropdown
+    id: phases
+    attributes:
+      label: Electrical configuration
+      options: [Single-phase, Three-phase, Unknown]
+    validations:
+      required: true
+  - type: dropdown
+    id: evsemaster
+    attributes:
+      label: Does EVSEMaster connect?
+      options: [Yes, No, Not tested]
+    validations:
+      required: true
+  - type: checkboxes
+    id: results
+    attributes:
+      label: Confirmed functions
+      options:
+        - label: Discovery and login
+        - label: Live telemetry
+        - label: Manual start and stop
+        - label: Current limit
+        - label: Repeated schedule read/write/readback
+        - label: Once-off charging
+        - label: Clock synchronisation
+        - label: Charging-session records
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes and sanitised logs
